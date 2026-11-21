@@ -1,0 +1,14 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+data/
+*.csv
+.env
+.env.*
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+.DS_Store
+Thumbs.db

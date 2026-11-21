@@ -1,0 +1,557 @@
+% Source autonome : tableaux, graphiques et bibliographie sont inclus.
+% Compiler avec XeLaTeX (deux passes) ou Tectonic.
+\documentclass[11pt,a4paper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+\fi
+\usepackage[french]{babel}
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+\usepackage[a4paper,left=25mm,right=23mm,top=24mm,bottom=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx,xcolor,graphicx}
+\IfFileExists{cmex9.tfm}{}{\DeclareFontFamily{OMX}{cmex}{}\DeclareFontShape{OMX}{cmex}{m}{n}{<->cmex10}{}}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.16}
+\usepackage{titlesec,fancyhdr}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{pdftitle={Détection de la fraude à la carte bancaire},
+  pdfauthor={Aymen Hammami},pdfsubject={Classement des transactions sous contrainte de vérification},
+  pdfkeywords={fraude bancaire, apprentissage supervisé, allocation des contrôles, calibration}}
+\definecolor{pin}{HTML}{145F55}
+\definecolor{encre}{HTML}{1E3038}
+\definecolor{terre}{HTML}{9F4D2D}
+\definecolor{gris}{HTML}{52636B}
+\definecolor{pale}{HTML}{EAF2EF}
+\newcommand{\nomAuteur}{Aymen Hammami}
+\newcommand{\risque}{\ensuremath{p}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt plus 1pt minus 1pt}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\topfraction}{.92}
+\renewcommand{\bottomfraction}{.84}
+\renewcommand{\textfraction}{.09}
+\renewcommand{\floatpagefraction}{.80}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\titleformat{\section}{\Large\bfseries\color{encre}}{\textcolor{pin}{\thesection}}{.65em}{}
+\titleformat{\subsection}{\large\bfseries\color{encre}}{\thesubsection}{.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{encre}}{\thesubsubsection}{.6em}{}
+\titlespacing*{\section}{0pt}{15pt plus 3pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt}{2pt}
+\pagestyle{fancy}
+\fancyhf{}\fancyhead[L]{\small\sffamily\textcolor{gris}{Détection de fraude par carte}}
+\fancyhead[R]{\small\sffamily\textcolor{gris}{Aymen Hammami}}
+\fancyfoot[R]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\raggedbottom
+\newcommand{\intertitre}[1]{\par\medskip{\sffamily\bfseries\color{pin}#1}\par\smallskip}
+\newcommand{\etude}[2]{\par\medskip\noindent\colorbox{pale}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\vspace{4pt}\hspace{4pt}\begin{minipage}{.965\linewidth}\textsf{\textbf{\color{pin}#1}}\quad #2\end{minipage}\vspace{5pt}}}\par\medskip}
+\newcommand{\montant}{\ensuremath{A}}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{5mm}
+{\large\sffamily\bfseries\color{pin} Mémoire de mastère}\par
+{\large\sffamily Big Data et Data Science en Finance}\par
+\vspace*{27mm}
+{\fontsize{32}{38}\selectfont\bfseries\color{encre}Détection de la fraude\\à la carte bancaire\par}
+\vspace{8mm}
+{\fontsize{19}{25}\selectfont\color{encre}Classer les transactions sous\\contrainte de vérification\par}
+\vspace{15mm}
+{\Large\nomAuteur\par}
+\vfill
+{\large\sffamily\bfseries\color{pin} Version révisée \enspace / \enspace Novembre 2026}\par
+\vspace{2mm}
+\begin{minipage}{.91\linewidth}\small
+Cette étude prolonge le mémoire réalisé en binôme à l'École supérieure de gestion et de finance (ESG Finance) en 2019--2020, dans la spécialité Big Data et Data Science en Finance. Aymen Hammami est l'auteur de la présente version. Les résultats historiques et ceux de la nouvelle expérience sont identifiés séparément.
+\end{minipage}
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\section*{Résumé}
+Une équipe de lutte contre la fraude reçoit plus de transactions suspectes qu'elle ne peut en contrôler. À capacité identique, faut-il classer les paiements selon leur probabilité de fraude ou selon le montant frauduleux attendu ? L'étude reprend un jeu de 284\,807 paiements, dont 492 fraudes, observés sur deux jours en septembre 2013. Un découpage en quatre périodes successives sépare entraînement, calibration, sélection du modèle et test final. Les deux stratégies utilisent les probabilités du même modèle de gradient boosting.
+
+Au budget principal de 20 vérifications pour 10\,000 paiements, chacune examine 185 alertes sur les 92\,576 transactions du test. Le classement par probabilité retrouve 89 des 115 fraudes et couvre 74,09\,\% du montant frauduleux. La pondération par le montant retrouve 38 fraudes et en couvre 76,48\,\%. L'écart de montant en sa faveur, égal à 391,97 unités, provient d'un seul lot. La comparaison des files explique ce résultat : la stratégie monétaire ajoute une fraude de 480,72 et écarte 52 fraudes qui totalisent 88,75. Le choix de la politique dépend ainsi de la valeur attribuée au montant couvert et aux incidents identifiés. L'effet sur les pertes nettes d'une banque demanderait des données sur les interventions et les recouvrements.
+
+\textbf{Mots-clés}\quad Fraude bancaire, classement sous contrainte, calibration, événements rares, risque opérationnel.
+\vspace{4mm}
+\begingroup\hyphenpenalty=10000
+\section*{Abstract}
+When review capacity is limited, should card payments be ranked by fraud probability or by expected fraudulent amount? This study uses 284,807 European card transactions, including 492 confirmed frauds, recorded over two days. Training, probability calibration, model selection and final testing are separated in time. Two review policies use the same gradient-boosting model and the same budget.
+
+At 20 reviews per 10,000 payments, each policy selects 185 alerts on a test set of 92,576 transactions. Ranking by probability finds 89 of 115 frauds and covers 74.09\% of fraudulent transaction value. Ranking by probability times amount finds 38 frauds and covers 76.48\%. The additional 391.97 monetary units come from a single batch. Transactions selected exclusively by the second policy include one fraud worth 480.72, while the first policy alone finds 52 frauds worth 88.75 in total. The choice depends on the value of identifying additional incidents as well as the amounts at risk. Realised savings would require information on interventions and recoveries.
+\endgroup
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\section{De la prédiction au choix des contrôles}\label{sec:intro}
+Deux paiements attendent une vérification. Le premier, de 20 unités, présente un risque de fraude estimé à 80\,\%. Le second, de 1\,000 unités, présente un risque de 10\,\%. Si un analyste ne peut examiner qu'un dossier et cherche à identifier un incident, le premier paiement est le meilleur choix en espérance. Si son objectif est de couvrir le montant frauduleux le plus élevé, les deux espérances sont respectivement de 16 et 100 unités. Le second choix devient préférable. Cet exemple suppose des probabilités fiables et une égale capacité d'intervention. Il explique pourquoi deux équipes qui utilisent exactement le même modèle peuvent organiser le travail dans un ordre différent.
+
+\subsection{Ce que montrait le mémoire de 2020}
+Le mémoire d'origine étudiait les performances de sept familles d'algorithmes sur des paiements par carte. Il associait des réseaux de neurones, une régression logistique, des arbres et forêts, le boosting, les machines à vecteurs de support et les plus proches voisins à des techniques de rééchantillonnage. Dans une application antifraude, la rareté des cas positifs rend l'exactitude globale peu informative : une décision systématiquement favorable aurait correctement classé 99,83\,\% des paiements du jeu, tout en laissant passer les 492 fraudes.
+
+Deux configurations historiques résument le problème de décision. Entraîné avec ADASYN, un réseau à une couche cachée retrouvait 96 fraudes sur 98 et générait 74 fausses alertes. Un second réseau, à deux couches cachées, retrouvait 93 fraudes et générait 63 fausses alertes. Le premier demandait quatorze vérifications supplémentaires pour trois fraudes détectées de plus. Les seuils, les paramètres d'initialisation et de régularisation appartenaient à ces expériences. Les résultats conservés aux pages imprimées 54, 56 et 63 du mémoire sont des points de comparaison historiques~\cite{archive2020}.
+
+La relecture du carnet principal a fait apparaître deux difficultés. La standardisation du montant précédait la séparation des données. De plus, le second découpage appliquait au tableau complet des positions calculées dans le sous-ensemble d'entraînement. Des transactions réservées au test pouvaient dès lors être réutilisées pour apprendre. Enfin, certaines lignes du tableau comparatif des sept modèles portaient sur des nombres de fraudes différents. Ces constats motivent la reconstruction d'une expérience commune avec des périodes disjointes. Ils empêchent de quantifier, à partir des anciens scores seuls, l'ampleur du biais éventuel.
+
+\subsection{Question de recherche et hypothèses}
+Le présent travail examine une décision opérationnelle précise. À la clôture de chaque lot de 10\,000 paiements, une équipe dispose de vingt contrôles. Le premier classement retient les probabilités de fraude les plus élevées. Le second retient les produits les plus élevés de la probabilité par le montant. Les mêmes transactions, le même modèle prédictif et le même budget sont utilisés pour les deux classements.
+
+\textbf{Hypothèse principale.} Sur la période de test, la seconde stratégie couvre un montant frauduleux total supérieur à celui de la première. La différence de montant constitue la mesure principale. \textbf{Question associée.} Combien de fraudes et de contrôles injustifiés séparent les deux listes ? Ce second volet établit le prix opérationnel d'un éventuel avantage monétaire.
+
+L'étude distingue les paiements étiquetés comme frauduleux, les alertes qui auraient été examinées et les pertes qu'une intervention aurait pu éviter. Les deux premiers éléments sont observables ou calculables. Le troisième dépend d'une action de la banque, du délai de traitement et des remboursements. Le protocole mesure donc d'abord les résultats de sélection, puis explicite les hypothèses nécessaires au passage à un scénario financier.
+
+\clearpage
+\section{De la probabilité de fraude à la décision de contrôle}
+\label{sec:litterature}
+
+\subsection{Une enquête commence par un choix de dossier}
+
+Une banque reçoit les opérations en continu. L'équipe chargée des alertes dispose, elle, d'un nombre limité de vérifications. Une note de risque sert donc à décider quel dossier examiner en premier. Dal Pozzolo et ses coauteurs décrivent une difficulté supplémentaire. Quand une équipe enquête sur une alerte, elle peut obtenir assez vite une réponse du titulaire de la carte. Pour les autres paiements, la connaissance d'une fraude dépend notamment du délai de contestation. Le mécanisme d'enquête influence ainsi la date à laquelle chaque étiquette devient disponible pour entraîner le modèle \cite{dalpozzolo2018}.
+
+Le Borgne et ses coauteurs proposent de mesurer la proportion de fraudes parmi les $k$ alertes prioritaires d'une journée. Ils distinguent aussi les transactions des cartes compromises. Trois paiements frauduleux peuvent conduire à un seul appel si l'analyste contacte le même titulaire. Le fichier public étudié ici contient une ligne par transaction et ne fournit aucun identifiant de carte. Le dénominateur pertinent est donc le nombre de paiements sélectionnés. Un budget de vingt vérifications représente vingt lignes présentées à la clôture d'un lot. Le temps réel passé avec des titulaires demeure inconnu \cite{leborgne2022}.
+
+\subsection{Mesurer le classement lorsque les fraudes sont rares}
+
+La fréquence des fraudes modifie l'interprétation d'un signal. Supposons, à titre d'exemple, que 10~000 opérations comprennent 20 fraudes. Un système qui en détecte 16 atteint 80\,\% de rappel. S'il signale aussi 1\,\% des 9~980 paiements légitimes, l'équipe reçoit environ 100 fausses alertes pour 16 fraudes, soit près de 14\,\% de précision. Le taux de fausses alertes parmi les paiements légitimes et la part de fausses alertes dans la file reçue par l'analyste utilisent deux dénominateurs différents. Les expériences de Saito et Rehmsmeier illustrent l'intérêt de la courbe précision--rappel pour lire cet effet lorsque la classe recherchée est rare \cite{saito2015}.
+
+La précision moyenne (\emph{Average Precision}, AP) résume la qualité du classement à plusieurs seuils. Pour chaque hausse de rappel, le calcul retient la précision atteinte à ce seuil et la pondère par la taille de cette hausse \cite{sklearnAP}. Dans la présente étude, l'AP sert au choix du modèle sur la validation. Le lecteur retrouve ensuite le nombre exact de fraudes dans les vingt premières places, car deux modèles d'AP proche peuvent donner des files différentes au budget choisi. La fréquence observée des fraudes constitue également la valeur d'AP d'un score constant sur la même période. Afficher ce repère permet de situer l'ordre de grandeur du résultat.
+
+\subsection{Donner un sens financier au score}
+
+Ordonner les paiements par risque exige surtout que les fraudes remontent vers le haut de la file. Multiplier le score par le montant suppose en plus que sa valeur numérique représente une probabilité crédible. Une transformation strictement croissante préserve l'ordre des risques pris isolément. Elle peut toutefois modifier l'ordre des produits entre ce risque et des montants différents. Une équipe qui souhaite exploiter ces produits doit donc s'intéresser à la calibration, y compris lorsque le classement initial lui semble satisfaisant.
+
+Cette question intervient dès la constitution des données d'apprentissage. Tirer au hasard une fraction des opérations légitimes et conserver toutes les fraudes augmente artificiellement la fréquence de fraude présentée au modèle. Dal Pozzolo et ses coauteurs analysent ce déplacement et dérivent une correction des probabilités lorsque les conditions du sous-échantillonnage sont connues \cite{dalpozzolo2015}. Le notebook suit une approche empirique. Il ajuste une transformation logistique sur une période réservée où la proportion des classes est naturelle, puis examine sa qualité sur une période ultérieure. Le score de Brier mesure la moyenne des écarts quadratiques entre probabilité et étiquette. Le diagramme de calibration rapproche, par tranche, le risque moyen prévu et la fréquence effectivement observée. Les effectifs accompagnent chaque tranche, car quelques observations à haut risque suffisent à produire un écart visuel important.
+
+Une calibration globale peut masquer une erreur propre aux paiements élevés. Imaginons que cent opérations reçoivent toutes un risque de 10\,\% et que dix soient frauduleuses. La fréquence moyenne coïncide avec la prévision. Si neuf de ces fraudes appartiennent aux cinquante paiements de faible montant et une seule aux cinquante de fort montant, les fréquences des deux groupes sont pourtant de 18\,\% et de 2\,\%. Une règle qui privilégie les paiements de fort montant exploiterait systématiquement le groupe dont le risque est surestimé. Une réévaluation sur un historique plus long pourrait donc examiner la calibration par tranche de montant.
+
+Correa Bahnsen, Aouada et Ottersten donnent un exemple de matrice de coûts dans laquelle l'examen d'une alerte entraîne des frais et une fraude manquée occasionne une perte liée au montant de la transaction \cite{bahnsen2015}. Pour interpréter l'expérience du mémoire, considérons un paiement de montant $A_i$ et de probabilité de fraude $p_i$. Si l'enquête permet d'éviter une fraction commune $q$ du montant en cas de fraude et coûte $c$ dans tous les cas, son bénéfice attendu vaut $q p_i A_i-c$. À nombre de contrôles fixé, les dossiers de plus grand $p_i A_i$ maximisent ce bénéfice attendu sous ces hypothèses, pour $q>0$. Une variation de $q$ commune à tous les paiements modifie la valeur financière simulée tout en conservant l'ordre des dossiers. Si, dans la réalité, des paiements très élevés sont plus difficiles à récupérer, cette propriété peut disparaître.
+
+L'évaluation empirique compte donc séparément les fraudes sélectionnées et additionne les montants de ces seules fraudes. Le coût de revue, la fraction des fonds récupérables et le préjudice causé par une vérification injustifiée demanderaient des informations complémentaires. Cette distinction permet de vérifier une affirmation précise sur les données accessibles, à savoir qu'une règle couvre une plus grande part des montants étiquetés frauduleux dans la période considérée.
+
+\subsection{Évaluer dans l'ordre où les décisions seraient prises}
+
+Les habitudes de paiement, l'intensité de l'activité et les délais de confirmation peuvent changer. Le protocole temporel de Dal Pozzolo et ses coauteurs intègre une séparation entre les opérations déjà connues et celles dont la nature ne sera révélée qu'ultérieurement \cite{dalpozzolo2018}. Dans notre expérience, entraîner sur une première période, calibrer sur la suivante, choisir le modèle sur une troisième et réserver la dernière à l'évaluation limite l'utilisation d'informations futures. Les dates de contestation demeurent absentes du fichier. L'expérience suppose donc que les étiquettes nécessaires sont disponibles à chaque frontière de développement.
+
+Enfin, les deux politiques s'appliquent aux mêmes paiements et disposent du même budget dans chaque lot. La comparaison porte ainsi sur deux sélections appariées. Un seul paiement de montant élevé peut peser davantage que plusieurs petites fraudes. Rapporter les écarts lot par lot, puis retirer la contribution de la plus grosse fraude à sélections fixes, permet d'identifier cette concentration. Deux jours d'historique suffisent à décrire son effet sur la période étudiée. L'estimation de sa persistance demanderait des périodes indépendantes couvrant d'autres conditions d'activité.
+\clearpage
+\section{Données et protocole temporel}
+\label{sec:protocole-temporel}
+
+\subsection{Population observée et unité d'analyse}
+
+Le jeu de données diffusé par le Machine Learning Group de l'Université libre de Bruxelles en collaboration avec Worldline décrit des transactions effectuées par des porteurs de cartes européens sur deux jours de septembre 2013 \cite{donnees}. La copie utilisée pour les calculs est celle que distribue le tutoriel de TensorFlow sur les classes déséquilibrées \cite{tensorflow}. Elle contient 284\,807 lignes et 31 colonnes. Chaque ligne représente une opération. La variable cible, \texttt{Class}, prend la valeur 1 pour les 492 opérations identifiées comme frauduleuses et 0 pour les 284\,315 autres. La fréquence globale de la fraude atteint ainsi 0,173\,\%, soit environ 17 opérations sur 10\,000.
+
+Les trente variables descriptives comprennent vingt-huit composantes numériques, de \texttt{V1} à \texttt{V28}, produites par une analyse en composantes principales avant la diffusion des données. Les caractéristiques bancaires qui ont servi à cette transformation et les coefficients de projection demeurent confidentiels. Deux variables conservent une interprétation directe. \texttt{Amount} mesure le montant de la transaction. \texttt{Time} indique le nombre de secondes écoulées depuis la première transaction enregistrée et s'étend de 0 à 172\,792. Les heures utilisées dans ce mémoire se rapportent à cette origine relative. Il serait hasardeux d'attribuer un pic d'activité à l'ouverture des commerces ou à une heure locale précise.
+
+L'unité d'analyse reste le paiement. Le fichier ne fournit aucun identifiant de carte ou de client, aucun résultat d'enquête et aucune date de confirmation de la fraude. Plusieurs paiements peuvent donc relever d'un même incident sans que l'étude puisse les regrouper. De même, l'étiquette permet une évaluation rétrospective, tandis que la date à laquelle elle aurait été disponible pour entraîner un système en service reste inconnue.
+
+\subsection{Contrôles de qualité et préparation des variables}
+
+La lecture du fichier ne révèle aucune valeur manquante ou infinie dans les colonnes numériques. Les montants sont tous positifs ou nuls, et 1\,825 transactions ont un montant nul. Sur l'ensemble des colonnes d'origine, on compte 1\,081 répétitions exactes au-delà de la première occurrence, dont 19 portent l'étiquette fraude. Faute d'identifiant métier, la répétition des valeurs publiées ne suffit pas à établir une erreur de collecte. L'analyse conserve donc ces observations pour maintenir le même périmètre que le jeu diffusé. Cette convention donne davantage de poids aux configurations répétées. Deux lignes identiques possédant la même valeur de \texttt{Time}, elles relèvent nécessairement de la même période d'évaluation.
+
+Le modèle utilise les composantes publiées et la transformation $\log(1+A)$ du montant $A$. L'ajout de l'unité rend la transformation définie à zéro et le logarithme réduit l'amplitude des très grands montants. Le calcul de couverture monétaire utilise ensuite les montants d'origine. Un identifiant technique attribué à chaque ligne avant le tri sert à retrouver une transaction et à départager les égalités. Cet identifiant et le temps écoulé sont exclus des prédicteurs. Les transformations nécessitant une estimation, notamment la mise à l'échelle, sont ajustées sur les observations d'apprentissage.
+
+\subsection{Quatre fenêtres pour un test sur des paiements ultérieurs}
+
+Les transactions sont triées par temps écoulé, puis par identifiant de ligne. Les frontières sont définies en heures entières depuis le début de l'enregistrement. Deux opérations partageant le même instant restent du même côté d'une frontière. La première journée sert à apprendre les modèles, les six heures suivantes à ajuster la calibration des probabilités, et les six suivantes à comparer les candidats. Les douze dernières heures sont réservées au test du modèle et des règles de décision fixés au terme de la validation.
+
+\begin{table}[htbp]
+\centering
+\caption{Répartition chronologique des transactions et des fraudes}
+\label{tab:periodes-donnees}
+\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Période & Heures écoulées & Paiements & Fraudes & Taux de fraude \\
+\midrule
+Entraînement & $[0,24[$  & 144\,786 & 281 & 0,194\,\% \\
+Calibration  & $[24,30[$ & 11\,594  & 69  & 0,595\,\% \\
+Validation   & $[30,36[$ & 35\,851  & 27  & 0,075\,\% \\
+Test final   & $[36,48[$ & 92\,576  & 115 & 0,124\,\% \\
+\midrule
+Ensemble     & $[0,48[$  & 284\,807 & 492 & 0,173\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Sur la seule fenêtre d'entraînement, le montant médian d'une fraude est de 9,99 unités contre 23,40 pour les paiements légitimes. La hiérarchie s'inverse pour les moyennes, respectivement 118,29 et 90,38 unités. Quelques fraudes d'un montant élevé tirent la moyenne vers le haut, alors qu'une part importante des opérations frauduleuses porte sur de petits montants. Cette dissociation motive l'évaluation conjointe du nombre de fraudes et de la somme de leurs montants.
+
+Le tableau~\ref{tab:periodes-donnees} met aussi en évidence la variation de la fréquence de fraude entre fenêtres. Deux périodes de six heures rassemblent respectivement 69 et 27 fraudes malgré des volumes de paiements très différents. Cette variation complique le transfert d'une probabilité estimée d'une période à l'autre. Deux journées ne suffisent toutefois pas à établir une dérive persistante ni à en identifier l'origine. Les résultats mesurent donc la capacité de généralisation à une période immédiatement ultérieure de ce fichier.
+\begin{figure}[htbp]
+\centering
+\begingroup
+\pgfplotsset{memoireentree/.style={
+  width=.485\linewidth,height=47mm,
+  xmin=0,xmax=24,xtick={2,6,10,14,18,22},
+  xticklabels={0--4,4--8,8--12,12--16,16--20,20--24},
+  axis lines=left,axis line style={draw=black!45,-},
+  tick align=outside,tick style={black!45},
+  tick label style={font=\sffamily\footnotesize},
+  title style={font=\sffamily\small\bfseries,at={(axis description cs:0,1.07)},anchor=south west,inner sep=0pt},
+  xlabel={Heures écoulées},xlabel style={font=\sffamily\footnotesize},
+  ymajorgrids,grid style={black!15,densely dotted},
+  scaled ticks=false,clip=true
+}}
+\begin{tikzpicture}
+\begin{axis}[memoireentree,title={Paiements (milliers)},ymin=0,ymax=36,ytick={0,10,20,30}]
+\addplot[ybar,bar width=10pt,draw=none,fill=pin] coordinates {
+  (2,9.577) (6,7.962) (10,29.862) (14,31.182) (18,32.269) (22,33.934)
+};
+\end{axis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+\begin{axis}[memoireentree,title={Fraudes pour 10\,000 paiements},ymin=0,ymax=60,ytick={0,20,40,60}]
+\addplot[ybar,bar width=10pt,draw=none,fill=terre] coordinates {
+  (2,39.678396) (6,54.006531) (10,21.766794) (14,14.431403) (18,14.874957) (22,12.376967)
+};
+\end{axis}
+\end{tikzpicture}
+\endgroup
+\caption{Volume et fréquence de fraude par tranche de quatre heures depuis le premier paiement. Le taux rapporte les fraudes confirmées aux paiements de la même tranche. Calculs sur les 144\,786 paiements de la période d’entraînement du jeu ULB/Worldline, dont 281 fraudes.}
+\label{fig:entree}
+\end{figure}
+\clearpage
+\section{Estimer le risque et allouer les vérifications}\label{sec:decision}
+
+\subsection{Un apprentissage commun aux trois modèles}
+Le sous-ensemble d'entraînement contient 144\,786 opérations. Pour conserver un calcul reproductible sur un ordinateur personnel, les 281 fraudes sont retenues et 8\,430 opérations légitimes sont tirées uniformément sans remise. Les trois modèles apprennent sur les mêmes 8\,711 lignes. La graine aléatoire vaut 42. La prévalence passe ainsi d'environ 0,19\,\% à 3,23\,\% dans l'échantillon effectivement présenté aux estimateurs. Cette intervention augmente le poids relatif des fraudes et réduit la variété des paiements légitimes rencontrés. Son effet propre n'est pas isolé par le protocole.
+
+Chaque modèle reçoit les 28 composantes et le logarithme du montant augmenté d'une unité. La moyenne et l'écart-type utilisés pour la standardisation sont appris exclusivement sur les lignes retenues pour l'apprentissage. La même transformation est ensuite appliquée aux observations ultérieures. Trois familles représentent des hypothèses différentes sur le lien entre caractéristiques et fraude.
+
+\begin{itemize}
+\item La \textbf{régression logistique} suppose que le logarithme des chances de fraude est affine en les variables transformées. Elle fournit une référence simple, régularisée, et un score continu exploitable pour le classement.
+\item Le \textbf{perceptron multicouche} possède deux couches cachées de 32 et 16 neurones, utilise des activations ReLU et l'optimiseur Adam. Il permet d'apprendre des interactions entre composantes. Le coût supplémentaire en paramètres se justifie seulement s'il améliore les décisions sur des paiements ultérieurs.
+\item Le \textbf{gradient boosting d'arbres par histogrammes} ajuste successivement de petits arbres pour réduire la perte de classification. Le modèle exécuté comporte jusqu'à 100 itérations, 15 feuilles par arbre et une pénalisation quadratique de coefficient 1. Il peut traiter des effets non linéaires sans fixer leur forme à l'avance.
+\end{itemize}
+
+Aucune nouvelle recherche exhaustive d'hyperparamètres n'est menée sur la période de test. Le nombre de fraudes disponibles pour sélectionner les modèles est limité. Multiplier les configurations sur une même validation augmenterait la probabilité de retenir un avantage dû à quelques observations.
+
+\subsection{Recalibrer un score et choisir un modèle}
+Soit $s_i$ le score de probabilité brut d'un modèle sur la transaction $i$. Le sous-échantillonnage modifie la fréquence des fraudes au cours de l'apprentissage. Pour obtenir une probabilité adaptée aux données non rééchantillonnées, une régression logistique univariée est ajustée séparément pour chaque modèle sur la fenêtre de calibration. En notant $\sigma(z)=1/(1+\exp(-z))$, le recalage s'écrit
+\begin{equation}
+ p_i=\sigma\!\left(\alpha+\beta\log\!\frac{s_i}{1-s_i}\right).
+ \label{eq:calibration}
+\end{equation}
+Le score brut est borné numériquement entre $10^{-12}$ et $1-10^{-12}$. Les deux paramètres $\alpha$ et $\beta$ appartiennent au calibrateur. Une fenêtre postérieure sert à mesurer sa qualité. Le tableau par tranche de risque du notebook compare les probabilités moyennes aux fréquences de fraude réellement observées. Une moyenne globale correcte pourrait masquer des erreurs importantes parmi les quelques paiements qui arrivent en tête de liste.
+
+La règle de sélection retient la meilleure précision moyenne sur la validation, puis le plus faible score de Brier calibré en cas d'égalité. La précision moyenne est calculée comme $\mathrm{AP}=\sum_j(R_j-R_{j-1})P_j$, où $P_j$ et $R_j$ sont la précision et le rappel aux seuils successifs, parcourus dans l'ordre des rappels croissants. Le Brier vaut $n^{-1}\sum_i(p_i-y_i)^2$. L'AP donne la priorité à la capacité de classement. Les résultats du Brier et la fiabilité des probabilités complètent la lecture lorsqu'une règle financière multiplie ensuite les probabilités par les montants. La fonction d'AP et sa convention de calcul sont précisées dans la documentation de l'implémentation utilisée~\cite{sklearnAP}.
+
+\subsection{Formaliser la décision par lot}
+Soient $A_i\geq 0$ le montant observé et $y_i\in\{0,1\}$ l'étiquette de fraude. Pour le lot $j$ de taille $n_j$, la capacité est $k_j=\lfloor n_j K/10\,000\rfloor$. Le paramètre principal est $K=20$. Les valeurs 10 et 40 servent à l'analyse de sensibilité. Les paiements sont ordonnés par temps écoulé, puis par identifiant de ligne. Une sélection $S_j$ doit contenir exactement $k_j$ opérations. Les scores identiques sont départagés par l'identifiant de ligne croissant. Les étiquettes sont utilisées après le classement pour calculer les résultats.
+
+Si $p_i$ représente la probabilité conditionnelle de fraude connaissant les informations disponibles au choix, le nombre de fraudes attendu et le montant frauduleux attendu d'une sélection sont
+\begin{equation}
+ \mathbb{E}[N(S_j)\mid X]=\sum_{i\in S_j}p_i,
+ \qquad
+ \mathbb{E}[M(S_j)\mid X]=\sum_{i\in S_j}p_i A_i .
+ \label{eq:objectifs}
+\end{equation}
+La linéarité de l'espérance suffit à établir ces expressions, même lorsque les fraudes sont dépendantes. Comme chaque contrôle consomme une unité de capacité, remplacer une transaction sélectionnée par une transaction mieux classée selon le score de l'objectif augmente ou conserve la valeur attendue. L'application répétée de cet échange conduit à choisir les $k_j$ plus grands $p_i$ pour maximiser le nombre attendu, ou les $k_j$ plus grands $p_iA_i$ pour maximiser le montant attendu. Cette propriété dépend de la qualité des probabilités, de l'additivité de l'objectif et du coût identique des contrôles.
+
+Sur le test, les numérateurs observés sont $N(S)=\sum_{i\in S}y_i$ et $M(S)=\sum_{i\in S}y_iA_i$, où $S$ réunit les sélections de tous les lots. Le rappel vaut $N(S)/\sum_i y_i$. La précision vaut $N(S)/|S|$ et la couverture monétaire vaut $M(S)/\sum_i y_iA_i$. Les bilans globaux utilisent les sommes des numérateurs et dénominateurs. Le rappel d'un lot sans fraude est indéfini. Il n'est pas substitué par un zéro dans une moyenne de rappels.
+\clearpage
+\section{Résultats empiriques}
+\label{sec:resultats-empiriques}
+
+La comparaison porte sur deux décisions successives. La première consiste à choisir un estimateur du risque à partir de la période de validation. La seconde consiste à allouer une capacité de contrôle, sur la période ultérieure de test, aux transactions les mieux classées par chaque règle. Garder le même estimateur à cette deuxième étape permet d'attribuer les écarts de sélection à la prise en compte du montant.
+
+\subsection{Sélection du modèle et examen des probabilités}
+
+Les trois modèles reçoivent les mêmes 281 fraudes et 8\,430 paiements légitimes lors de l'apprentissage. La validation conserve les 35\,851 transactions de sa fenêtre temporelle, dont 27 fraudes. Le tableau~\ref{tab:res-validation} présente les deux critères calculés sur cette fenêtre. La précision moyenne (AP) évalue la qualité du classement. Le score de Brier mesure l'erreur quadratique moyenne des probabilités et décroît lorsque cette erreur diminue.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparaison des modèles sur la validation chronologique}
+\label{tab:res-validation}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Modèle & AP & Brier brut & Brier après calibration \\
+\midrule
+Régression logistique   & 0,674670 & 0,001522 & 0,000378 \\
+Réseau à deux couches   & 0,530417 & 0,002927 & 0,000566 \\
+Boosting d'arbres       & 0,682455 & 0,001238 & 0,000472 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Le boosting d'arbres arrive premier selon l'AP, critère de sélection fixé avant l'évaluation finale. Son avance sur la régression logistique atteint seulement 0,0078. Avec 27 observations positives, déplacer quelques fraudes dans les premiers rangs suffit à faire varier cette mesure. La régression logistique obtient pour sa part la plus faible erreur de Brier après calibration. Ces mesures décrivent deux qualités distinctes, toutes deux pertinentes lorsque le montant sera ensuite multiplié par le risque annoncé.
+
+La calibration réduit le Brier des trois candidats. Des écarts subsistent néanmoins au sommet du classement du boosting. Parmi les 35 paiements de validation auxquels le modèle attribue une probabilité comprise entre 50 et 100\,\%, 20 sont effectivement frauduleux. La probabilité moyenne annoncée vaut 82,5\,\%, pour une fréquence observée de 57,1\,\%. La petite taille du groupe limite la portée de cet écart. Elle invite à interpréter avec prudence une valeur monétaire attendue qui dépend directement du niveau de probabilité.
+
+\subsection{Arbitrage entre fréquence de détection et montant couvert}
+
+Le test final couvre les douze dernières heures du jeu. Il contient 92\,576 paiements, dont 115 fraudes totalisant 16\,413,23 unités monétaires. Le modèle retenu y atteint une AP de 0,7804 et un Brier de 0,000486. À titre de repère, un score constant donne une AP égale à la fréquence des fraudes, soit environ 0,0012. Ces valeurs agrègent tous les rangs. Pour apprécier le fonctionnement d'une équipe qui ne peut traiter que les premières alertes, il faut maintenant préciser son budget.
+
+\begin{table}[htbp]
+\centering
+\caption{Résultats de test à budget identique pour les deux règles}
+\label{tab:res-budgets}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}rlrrrrr@{}}
+\toprule
+$K$ & Classement & Contrôles & Fraudes & Fausses alertes & Montant repéré & Couverture \\
+\midrule
+10 & $p$   & 92  & 69 & 23  & 8\,820,45  & 53,74\,\% \\
+10 & $pA$  & 92  & 34 & 58  & 11\,905,41 & 72,54\,\% \\
+\addlinespace
+20 & $p$   & 185 & 89 & 96  & 12\,160,40 & 74,09\,\% \\
+20 & $pA$  & 185 & 38 & 147 & 12\,552,37 & 76,48\,\% \\
+\addlinespace
+40 & $p$   & 370 & 93 & 277 & 12\,411,49 & 75,62\,\% \\
+40 & $pA$  & 370 & 48 & 322 & 13\,564,53 & 82,64\,\% \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{0.94\linewidth}\footnotesize
+$K$ est le nombre de vérifications par lot de 10\,000 paiements. Le classement $p$ utilise la probabilité de fraude et $pA$ son produit par le montant. La couverture rapporte le montant frauduleux repéré aux 16\,413,23 unités frauduleuses du test.
+\end{minipage}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\begingroup
+\pgfplotsset{memoirebudget/.style={
+    width=.487\linewidth,height=49mm,
+    xmin=7,xmax=43,xtick={10,20,40},
+    ymin=0,ymax=100,ytick={0,25,50,75,100},
+    scaled ticks=false,
+    axis lines=left,axis line style={draw=black!45,-},
+    tick align=outside,tick style={black!45},
+    tick label style={font=\sffamily\footnotesize},
+    title style={font=\sffamily\small\bfseries,at={(axis description cs:0,1.05)},anchor=south west,inner sep=0pt},
+    xlabel={Contrôles pour 10\,000 paiements},
+    xlabel style={font=\sffamily\footnotesize},
+    ymajorgrids,grid style={black!14,densely dotted},
+    enlarge x limits=false
+}}
+\begin{tikzpicture}
+  \begin{axis}[memoirebudget,title={Fraudes repérées (\%)}]
+    \addplot[color=pin,line width=1.25pt,mark=*,mark size=2.25pt] coordinates {(10,60.00) (20,77.39) (40,80.87)};
+    \addplot[terre,line width=1.25pt,dashed,mark=square*,mark size=2.25pt] coordinates {(10,29.57) (20,33.04) (40,41.74)};
+  \end{axis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+  \begin{axis}[memoirebudget,title={Montant frauduleux couvert (\%)}]
+    \addplot[color=pin,line width=1.25pt,mark=*,mark size=2.25pt] coordinates {(10,53.74) (20,74.09) (40,75.62)};
+    \addplot[terre,line width=1.25pt,dashed,mark=square*,mark size=2.25pt] coordinates {(10,72.54) (20,76.48) (40,82.64)};
+  \end{axis}
+\end{tikzpicture}
+\par\smallskip
+{\sffamily\footnotesize
+\tikz[baseline=-.5ex]{\draw[color=pin,line width=1.25pt] (0,0)--(.65,0);\fill[color=pin] (.325,0) circle[radius=2.25pt];}~Risque seul
+\hspace{1.6em}
+\tikz[baseline=-.5ex]{\draw[terre,line width=1.25pt,dashed] (0,0)--(.65,0);\fill[terre] (.25,-.075) rectangle (.40,.075);}~Risque multiplié par le montant\par}
+\endgroup
+\caption{Part des fraudes repérées et part du montant frauduleux couvert selon le budget de contrôle. Les trois budgets sont évalués sur les mêmes transactions de test.}
+\label{fig:budgets}
+\end{figure}
+
+Dans le scénario principal, les neuf lots complets donnent droit à 180 contrôles. Les 2\,576 paiements du dernier lot donnent droit à cinq contrôles supplémentaires. Au terme des 185 vérifications, le classement par risque retrouve 89 des 115 fraudes et en manque 26. Son rappel atteint 77,39\,\% et sa précision 48,11\,\%. Le classement monétaire retrouve 38 fraudes et en manque 77, pour un rappel de 33,04\,\% et une précision de 20,54\,\%. En déplaçant ainsi les contrôles vers des paiements plus exposés, cette seconde règle couvre 391,97 unités supplémentaires, soit 2,39 points de couverture en plus. Une équipe qui évalue la réussite par le nombre d'incidents confirmés et une équipe qui privilégie le montant couvert aboutiraient donc à des choix différents sur cette période.
+
+\subsection{Origine de l'écart monétaire}
+
+Les identifiants de ligne permettent de comparer le contenu des deux files. Seules 57 des 185 alertes sont communes aux deux sélections. Elles regroupent 37 fraudes, d'un montant total de 12\,071,65. Parmi les 128 alertes propres au classement par risque, 52 correspondent à des fraudes dont la somme atteint 88,75. Parmi les 128 alertes propres au classement monétaire, une seule fraude contribue au bilan. Son montant atteint 480,72. L'écart global s'explique donc entièrement par la différence entre ces deux ensembles distincts, soit $480{,}72-88{,}75=391{,}97$.
+
+Cette opération de 480,72 appartient au premier lot. Pour ce lot, la règle monétaire repère 2\,308,48 unités contre 1\,831,76 pour le risque seul, soit un avantage de 476,72. Dans chacun des lots 2 à 9, elle couvre un montant légèrement inférieur. Le lot 10 ne contient aucune fraude et les deux montants y sont nuls. Exclure le premier lot donne un écart cumulé de $-84{,}75$ sur les neuf autres. Ce diagnostic localise l'origine du résultat global. La répétition de ce type de transaction dans d'autres journées reste à établir.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=.92\linewidth,height=63mm,
+    xmin=-.2,xmax=11.5,xtick={0,1,2,3,4,5,6,7,8,9,10},
+    ymin=-145,ymax=560,ytick={-100,0,100,200,300,400,500},
+    axis lines=left,axis line style={draw=black!45,-},tick align=outside,tick style={black!45},
+    ymajorgrids,grid style={black!14,densely dotted},scaled ticks=false,
+    tick label style={font=\sffamily\footnotesize},label style={font=\sffamily\footnotesize},
+    xlabel={Dernier lot inclus dans le cumul},ylabel={Écart cumulé de montant repéré},
+]
+\addplot[black!45,line width=.45pt] coordinates {(0,0) (10.1,0)};
+\addplot[terre,line width=1.3pt,mark=*,mark size=1.9pt] coordinates {
+    (0,0) (1,476.72) (2,475.72) (3,464.64) (4,448.57) (5,429.48)
+    (6,410.75) (7,399.34) (8,392.73) (9,391.97) (10,391.97)
+};
+\addplot[color=pin,line width=1.3pt,dashed,mark=square*,mark size=1.7pt] coordinates {
+    (1,0) (2,-1.00) (3,-12.08) (4,-28.15) (5,-47.24)
+    (6,-65.97) (7,-77.38) (8,-83.99) (9,-84.75) (10,-84.75)
+};
+\node[anchor=south west,inner sep=1.5pt,font=\sffamily\footnotesize,text=terre] at (axis cs:1,479) {$+476{,}72$};
+\node[anchor=west,inner sep=2pt,font=\sffamily\footnotesize,text=terre] at (axis cs:10,391.97) {$+391{,}97$};
+\node[anchor=west,inner sep=2pt,font=\sffamily\footnotesize,text=pin] at (axis cs:10,-84.75) {$-84{,}75$};
+\end{axis}
+\end{tikzpicture}
+\par\smallskip
+{\sffamily\footnotesize
+\tikz[baseline=-.5ex]{\draw[terre,line width=1.25pt] (0,0)--(.65,0);\fill[terre] (.325,0) circle[radius=2pt];}~Tous les lots
+\hspace{1.6em}
+\tikz[baseline=-.5ex]{\draw[color=pin,line width=1.25pt,dashed] (0,0)--(.65,0);\fill[color=pin] (.25,-.075) rectangle (.40,.075);}~Cumul à partir du deuxième lot\par}
+\caption{Écart cumulé de montant frauduleux repéré, calculé en soustrayant le résultat du risque seul à celui du risque multiplié par le montant. Le budget est de vingt contrôles pour dix mille paiements.}
+\label{fig:lots}
+\end{figure}
+
+Le contrôle de sensibilité prévu avant le test répond à une question voisine. La fraude de montant maximal de la période vaut 1\,504,93 et les deux règles la sélectionnent. En retirant sa contribution monétaire des deux bilans, tout en gardant les files d'alertes fixes, l'écart reste égal à 391,97. Les deux constats sont compatibles. Dans cette expérience, la transaction qui départage les politiques est une fraude de montant intermédiaire, suffisamment élevée pour compenser la somme de nombreuses petites fraudes.
+
+\subsection{Sensibilité à la capacité et interprétation financière}
+
+À dix contrôles pour 10\,000 paiements, la règle monétaire couvre 72,54\,\% du montant contre 53,74\,\% pour le risque seul. À quarante, les couvertures atteignent respectivement 82,64\,\% et 75,62\,\% (tableau~\ref{tab:res-budgets}). Le classement par risque retrouve davantage de fraudes aux trois budgets. Doubler le budget principal de 20 à 40 engage 185 vérifications additionnelles sur l'ensemble du test. Elles apportent seulement quatre fraudes supplémentaires au classement par risque et dix au classement par montant. Le rendement marginal des vérifications dépend donc des paiements encore disponibles à ces rangs.
+
+Une interprétation économique exige des hypothèses sur le résultat d'une enquête. Supposons, à titre illustratif, que la moitié du montant des fraudes identifiées puisse être évitée et que chaque contrôle coûte cinq unités. Les deux politiques engagent alors 925 unités en frais de revue au budget principal. Leur gain net simulé par rapport à l'absence de contrôles atteint environ 5\,155 unités avec le risque seul et 5\,351 avec la règle monétaire. L'écart d'environ 196 unités correspond à la moitié de l'écart brut de montant, puisque les frais de revue sont égaux. Les données ne documentent ni les remboursements, ni les effets sur les clients, ni les pertes effectivement évitées. La décision de déploiement nécessiterait des observations sur ces postes et une évaluation sur plusieurs périodes indépendantes.
+\par\medskip
+\section{Discussion et portée financière}\label{sec:discussion}
+
+\subsection{Quel objectif une équipe souhaite-t-elle rémunérer ?}
+La pondération par le montant bénéficie, sur cette période, d'une seule fraude supplémentaire propre à sa sélection. Les nombreuses petites fraudes auxquelles elle renonce peuvent mériter une intervention, même si leur somme est modeste. Par exemple, l'identification d'un incident peut déclencher un suivi du client ou interrompre d'autres opérations. Les données disponibles ne permettent ni d'observer ces effets ni de savoir combien de transactions appartiennent à une même carte. Il faut donc séparer le critère mesuré de la valeur que lui attribuerait une équipe réelle.
+
+Un calcul de sensibilité permet d'exprimer cet arbitrage. Supposons qu'une enquête évite en moyenne une fraction $q$ du montant repéré, qu'un incident identifié possède en plus une valeur fixe $b$ et que chaque vérification coûte $c$. Le bilan hypothétique d'une file $S$ devient
+\begin{equation}
+ V(S)=qM(S)+bN(S)-c|S| .
+ \label{eq:valeur}
+\end{equation}
+Le montant et les deux coûts sont exprimés dans une même unité. Cette représentation suppose que les avantages attribués aux incidents s'additionnent et que la valeur $b$ ne figure pas déjà dans le terme monétaire. Elle sert à faire varier des hypothèses qui restent inconnues dans le jeu de données.
+
+Au budget principal, les deux règles comptent 185 revues. En prenant la règle monétaire moins la règle par risque, le terme de coût s'annule. Le bilan différentiel est alors
+\[
+ \Delta V=391{,}97q-51b .
+\]
+Pour $q=0{,}50$, valoriser chaque incident confirmé à plus de 3,84 unités environ suffit à faire préférer le classement par risque sur le test. À la valeur exacte $b=391{,}97q/51$, les deux scénarios sont équivalents. Le seuil fournit une manière concrète de discuter avec un responsable de la fraude : quelle valeur minimale aurait, dans son contexte, l'identification d'un incident supplémentaire ? Une décision de production demanderait d'estimer cette valeur sur des dossiers réels et d'examiner les écarts par client.
+
+Si le budget représente un plafond facultatif et que la fraction évitable est commune, le gain attendu d'une revue isolée devient $p_i(qA_i+b)-c$. Une équipe pourrait se limiter, dans la limite de sa capacité, aux dossiers dont ce terme est positif. Dans le protocole mesuré, toutes les places calculées sont consommées. L'extension à une capacité facultative répondrait à une question différente et demanderait des hypothèses opérationnelles explicites.
+
+\subsection{Ce que les données permettent de généraliser}
+\textbf{Représentativité temporelle.} Les transactions couvrent deux jours consécutifs de septembre 2013. Le test final en occupe douze heures. Le premier lot explique l'avantage monétaire global et l'ordre des deux politiques s'inverse lorsqu'il est retiré. Plusieurs mois d'observation permettraient d'étudier la variation des volumes, les changements de comportement et la répétition d'épisodes analogues. Une évaluation par fenêtres glissantes, avec des périodes de test strictement ultérieures et des délais d'étiquetage réalistes, répondrait à cette limite.
+
+\textbf{Unité d'analyse.} Le fichier ne comporte pas d'identifiant permettant de relier plusieurs paiements à un porteur. Toutes les mesures sont exprimées en transactions. Une équipe qui bloque une carte après la première alerte peut empêcher, en une intervention, plusieurs opérations ultérieures. Le présent calcul ne valorise pas ces interactions. Il n'est pas possible non plus d'évaluer les écarts de traitement entre populations de clients à partir des composantes anonymisées disponibles.
+
+\textbf{Probabilités et incertitude.} Le choix du modèle porte sur 27 fraudes de validation. Le boosting l'emporte de peu en précision moyenne ; la régression logistique a un meilleur Brier. La stabilité des rangs et celle des probabilités par tranche de montant devraient être réexaminées sur une nouvelle série. Les lots du test sont successifs et proviennent du même court épisode. Un intervalle obtenu en supposant ces observations indépendantes pourrait donner une impression excessive de précision. Les effectifs bruts, le détail par lot et le retrait de la plus grosse fraude rendent ici l'incertitude visible.
+
+\textbf{Coût effectif et passage à l'action.} Le montant d'un paiement frauduleux est observable dès que l'étiquette est connue. La perte nette supportée par la banque dépend aussi des mécanismes de remboursement, de la responsabilité financière, des délais et de l'efficacité de l'enquête. Un test en conditions opérationnelles devrait enregistrer les alertes effectivement traitées, le temps passé, les incidents reliés et le montant récupéré. Ces données permettraient d'évaluer une politique réelle avec un dispositif d'identification adapté.
+
+\subsection{Du notebook au simulateur}
+Le simulateur du portfolio permet d'examiner le même test à des budgets entiers de 0 à 100 vérifications pour 10\,000 paiements, sur l'ensemble de la période ou sur un lot choisi. Il conserve les probabilités et les rangs du modèle figé. Le curseur modifie le nombre d'opérations sélectionnées dans chaque lot et recalcule les bilans. Le lecteur peut examiner les transactions retenues avant d'afficher leurs étiquettes. À budget nul, le nombre de contrôles et de fraudes retrouvées est nul ; une précision fondée sur zéro contrôle reste indéfinie.
+
+La démonstration la plus informative consiste à sélectionner vingt contrôles, observer le bilan global, puis ouvrir le premier lot et le comparer aux huit lots suivants. L'utilisateur peut alors distinguer trois affirmations : le modèle donne une priorité aux paiements, la contrainte détermine la taille de la file et les montants des quelques fraudes retenues déterminent l'avantage financier observé. Les budgets intermédiaires proposés par l'interface prolongent l'exploration ; les budgets spécifiés pour l'analyse principale et sa sensibilité sont respectivement 20 et 10 ou 40.
+
+\section{Conclusion}\label{sec:conclusion}
+À capacité de vérification égale, les deux objectifs conduisent à des listes très différentes. Sur le test, la stratégie qui trie par probabilité retrouve 89 fraudes, contre 38 lorsque la probabilité est multipliée par le montant. La seconde couvre 76,48\,\% du montant frauduleux, contre 74,09\,\% pour la première. L'hypothèse principale se vérifie sur cet échantillon ; sa portée est limitée par la concentration du résultat sur une opération présente dans une seule des deux files.
+
+Le choix le mieux défendable dépend donc du mandat de l'équipe. Sur cette période, une équipe dont l'objectif est d'identifier le plus d'incidents choisirait le classement par risque. Une équipe mandatée pour maximiser le seul montant couvert aurait obtenu un léger avantage avec la règle monétaire. La décision la plus importante pour une prochaine étude serait de mesurer, sur des périodes indépendantes, la fréquence de ces arbitrages et d'y associer la valeur d'une intervention réelle. Cette articulation entre qualité prédictive, capacité humaine et coût financier constitue l'apport de la version révisée.
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{Références}
+\begin{thebibliography}{99}\small
+\bibitem{dalpozzolo2018}
+A. Dal Pozzolo, G. Boracchi, O. Caelen, C. Alippi et G. Bontempi.
+\emph{Credit Card Fraud Detection: A Realistic Modeling and a Novel Learning Strategy}.
+IEEE Transactions on Neural Networks and Learning Systems, 29(8), 3784--3797, 2018.
+\href{https://doi.org/10.1109/TNNLS.2017.2736643}{DOI 10.1109/TNNLS.2017.2736643}.
+
+\bibitem{leborgne2022}
+Y.-A. Le Borgne, W. Siblini, B. Lebichot et G. Bontempi.
+\emph{Reproducible Machine Learning for Credit Card Fraud Detection: Practical Handbook}.
+Université libre de Bruxelles, 2022.
+\href{https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_4_PerformanceMetrics/TopKBased.html}{Chapitre 4, mesures de précision à capacité limitée}.
+
+\bibitem{saito2015}
+T. Saito et M. Rehmsmeier.
+\emph{The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets}.
+PLoS ONE, 10(3), e0118432, 2015.
+\href{https://doi.org/10.1371/journal.pone.0118432}{DOI 10.1371/journal.pone.0118432}.
+
+\bibitem{sklearnAP}
+Équipe scikit-learn. \emph{average\_precision\_score}. Documentation de scikit-learn, version 1.7.2.
+\href{https://scikit-learn.org/1.7/modules/generated/sklearn.metrics.average_precision_score.html}{Définition et convention de calcul de la précision moyenne}.
+
+\bibitem{dalpozzolo2015}
+A. Dal Pozzolo, O. Caelen, R. A. Johnson et G. Bontempi.
+\emph{Calibrating Probability with Undersampling for Unbalanced Classification}.
+IEEE Symposium Series on Computational Intelligence, 2015.
+\href{https://doi.org/10.1109/SSCI.2015.33}{DOI 10.1109/SSCI.2015.33}.
+
+\bibitem{bahnsen2015}
+A. Correa Bahnsen, D. Aouada et B. Ottersten.
+\emph{Example-Dependent Cost-Sensitive Decision Trees}.
+Expert Systems with Applications, 42(19), 6609--6619, 2015.
+\href{https://doi.org/10.1016/j.eswa.2015.04.042}{DOI 10.1016/j.eswa.2015.04.042}.
+\bibitem{donnees} Machine Learning Group, Université libre de Bruxelles et Worldline. \emph{Credit Card Fraud Detection}. Fiche du jeu de données. \href{https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud}{Dépôt des données, Kaggle}.
+\bibitem{tensorflow} TensorFlow. \emph{Classification on imbalanced data}. Tutoriel et copie publique du fichier de transactions. \href{https://www.tensorflow.org/tutorials/structured_data/imbalanced_data}{Tutoriel TensorFlow}.
+\bibitem{archive2020} Mémoire de mastère en binôme (juin 2020). \emph{La détection de fraude à la carte de crédit}. ESG Finance, spécialité Big Data et Data Science en Finance. Version anonymisée et carnets associés, archives du projet.
+\end{thebibliography}
+\clearpage
+\appendix
+\section{Reproduire et contrôler les calculs}\label{sec:annexe}
+
+\subsection{Ressources d'exécution}
+Le \href{https://drive.google.com/drive/folders/1Weoy-XsUsNgidqnBEDJ7QhyO2F6-zl3Q}{dossier de travail du projet} rassemble le mémoire historique, les deux carnets d'origine, le notebook exécuté de la reprise, sa version HTML et le simulateur. L'accès aux fichiers dépend des droits accordés par le propriétaire. Le \href{https://aymen-data.github.io/credit-card-fraud-portfolio/}{simulateur en ligne} utilise les mêmes prédictions. Une copie HTML autonome peut également être ouverte hors ligne dans un navigateur.
+
+Le fichier \texttt{Detection\_fraude\_carte\_bancaire.ipynb} s'exécute dans l'ordre des cellules. Le CSV peut être placé à côté du notebook ou dans le sous-dossier \texttt{data/}. La cellule de chargement peut aussi le récupérer depuis le miroir documenté par TensorFlow~\cite{tensorflow}. L'empreinte SHA-256 de la copie utilisée pour cette étude est, en deux segments consécutifs,
+\begin{center}\small\ttfamily
+76274b691b16a6c49d3f159c883398e0\\
+3ccd6d1ee12d9d8ee38f4b4b98551a89
+\end{center}
+
+L'exécution de référence emploie Python 3.13.9, NumPy 2.3.5, pandas 2.3.3, scikit-learn 1.7.2 et Matplotlib 3.10.6. Le CSV d'origine compte 31 colonnes, cible incluse. L'index technique est créé avant le tri temporel. Cet ordre importe : en cas d'égalité des scores, le classement des alertes est départagé par l'index de ligne croissant.
+
+\subsection{Quatre contrôles de reproduction}
+\begin{enumerate}
+\item \textbf{Intégrité.} Vérifier 284\,807 lignes, 492 fraudes, 1\,081 répétitions exactes au-delà de la première occurrence et l'absence de données manquantes. Une différence impose d'examiner la version du fichier et les transformations déjà appliquées.
+\item \textbf{Temporalité.} Retrouver les quatre effectifs du tableau~\ref{tab:periodes-donnees}. L'indice de chaque paiement apparaît dans une seule période. Le maximum temporel d'une période précède strictement le minimum de la suivante.
+\item \textbf{Prédiction.} Vérifier que les trois candidats sont ajustés sur les mêmes 8\,711 observations et que le choix par AP retient le boosting d'arbres. Le test compte 92\,576 scores et 115 fraudes. Les valeurs de la validation et du test figurent dans le chapitre~\ref{sec:resultats-empiriques}.
+\item \textbf{Décision.} Au budget principal, obtenir neuf fois vingt contrôles plus cinq pour le dernier lot. Les deux fichiers de sélection doivent contenir 57 identifiants communs. Les sommes des montants frauduleux captés valent 12\,160,40 et 12\,552,37 pour les classements par risque et par montant attendu.
+\end{enumerate}
+
+La dernière cellule du notebook propose un export facultatif. Régler \texttt{EXPORTER = True} crée les fichiers \texttt{comparaison\_strategies.csv}, \texttt{resultats\_par\_lot.csv} et \texttt{predictions\_test.csv}. Ces tables permettent de contrôler le calcul indépendamment des figures et de retrouver l'origine d'un écart entre deux files.
+
+\clearpage
+\section{Lire le bilan d'une politique de contrôle}\label{sec:annexe-bilan}
+Les deux matrices suivantes portent sur le même test et le même budget de 185 alertes. Les lignes distinguent les paiements réellement frauduleux des paiements légitimes. Les colonnes distinguent les paiements présents dans la file des paiements laissés hors de celle-ci.
+
+\begin{table}[htbp]\centering
+\caption{Matrices de sélection sur la période de test, pour $K=20$}\label{tab:matrices}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+&\multicolumn{2}{c}{Classement par $p$}&\multicolumn{2}{c}{Classement par $pA$}\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Statut réel & En file & Hors file & En file & Hors file\\
+\midrule
+Fraude & 89 & 26 & 38 & 77\\
+Paiement légitime & 96 & 92\,365 & 147 & 92\,314\\
+\midrule
+Total & 185 & 92\,391 & 185 & 92\,391\\\bottomrule
+\end{tabular}
+\end{table}
+
+Une alerte que la base étiquette comme légitime demeure une observation sélectionnée pour enquête. La table ne fournit aucune information sur la réaction qu'aurait eue le client. Elle invite à lire la précision du point de vue de l'analyste : sur 185 dossiers, 89 sont frauduleux avec le premier classement et 38 avec le second. La lecture par ligne répond au point de vue du risque : sur 115 fraudes présentes, 26 et 77 respectivement ne sont pas mises en file.
+
+Le rapprochement par identifiant apporte un contrôle supplémentaire. Les sélections communes réunissent 57 alertes, dont 37 fraudes ; leur montant frauduleux cumulé représente environ 73,55\,\% du montant frauduleux total. Toute l'interprétation du passage d'une politique à l'autre porte donc sur les 128 alertes spécifiques à chacune. Compter seulement le total des alertes ou le pourcentage global de transactions bien classées ferait perdre cette information.
+
+\begin{table}[htbp]\centering\small
+\caption{Vérification du scénario principal lot par lot}\label{tab:lots-detail}
+\begin{tabular}{@{}rrrrrrr@{}}\toprule
+& & & \multicolumn{2}{c}{Risque $p$}&\multicolumn{2}{c}{Risque $\times$ montant $pA$}\\
+\cmidrule(lr){4-5}\cmidrule(l){6-7}
+Lot & Revues & Fraudes du lot & Repérées & Montant & Repérées & Montant\\
+\midrule
+1&20&10&7&1\,831,76&4&2\,308,48\\
+2&20&7&6&1\,395,04&4&1\,394,04\\
+3&20&16&12&3\,160,70&8&3\,149,62\\
+4&20&12&10&778,44&2&762,37\\
+5&20&18&16&1\,198,74&4&1\,179,65\\
+6&20&25&19&2\,010,44&6&1\,991,71\\
+7&20&9&7&508,92&3&497,51\\
+8&20&7&6&173,73&2&167,12\\
+9&20&11&6&1\,102,63&5&1\,101,87\\
+10&5&0&0&0,00&0&0,00\\
+\midrule
+Total&185&115&89&12\,160,40&38&12\,552,37\\\bottomrule
+\end{tabular}
+\end{table}
+
+Les neuf premiers lots contiennent 10\,000 paiements chacun. La capacité du dixième, composé de 2\,576 paiements, est $\lfloor 2\,576\times 20/10\,000\rfloor=5$. L'absence de fraude confirmée dans ce dernier lot explique les deux montants nuls.
+\end{document}

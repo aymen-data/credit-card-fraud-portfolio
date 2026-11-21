@@ -1,0 +1,333 @@
+<svg role="img" aria-labelledby="budget-description" xmlns:xlink="http://www.w3.org/1999/xlink" width="780pt" height="275pt" viewBox="0 0 780 275" xmlns="http://www.w3.org/2000/svg" version="1.1"><desc id="budget-description">Pour dix, vingt et quarante contrôles par dix mille paiements, le risque seul repère 60,00 %, 77,39 % et 80,87 % des fraudes, contre 29,57 %, 33,04 % et 41,74 % avec le risque multiplié par le montant. La couverture monétaire atteint respectivement 53,74 %, 74,09 % et 75,62 %, contre 72,54 %, 76,48 % et 82,64 %.</desc>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.6, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">svg[aria-labelledby="budget-description"] *{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="budget-figure_1">
+  <g id="budget-patch_1">
+   <path d="M 0 275 
+L 780 275 
+L 780 0 
+L 0 0 
+L 0 275 
+z
+" style="fill: none"/>
+  </g>
+  <g id="budget-axes_1">
+   <g id="budget-patch_2">
+    <path d="M 62.4 215.875 
+L 363.687554 215.875 
+L 363.687554 11 
+L 62.4 11 
+L 62.4 215.875 
+z
+" style="fill: none"/>
+   </g>
+   <g id="budget-matplotlib.axis_1">
+    <g id="budget-xtick_1">
+     <g id="budget-line2d_1"/>
+     <g id="budget-text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="87.507296" y="228.973438" transform="rotate(-0 87.507296 228.973438)">10</text>
+     </g>
+    </g>
+    <g id="budget-xtick_2">
+     <g id="budget-line2d_2"/>
+     <g id="budget-text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="171.198283" y="228.973438" transform="rotate(-0 171.198283 228.973438)">20</text>
+     </g>
+    </g>
+    <g id="budget-xtick_3">
+     <g id="budget-line2d_3"/>
+     <g id="budget-text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="338.580258" y="228.973438" transform="rotate(-0 338.580258 228.973438)">40</text>
+     </g>
+    </g>
+   </g>
+   <g id="budget-matplotlib.axis_2">
+    <g id="budget-ytick_1">
+     <g id="budget-line2d_4">
+      <path d="M 62.4 213.846535 
+L 363.687554 213.846535 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_5"/>
+     <g id="budget-text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="56.9" y="217.645753" transform="rotate(-0 56.9 217.645753)">0</text>
+     </g>
+    </g>
+    <g id="budget-ytick_2">
+     <g id="budget-line2d_6">
+      <path d="M 62.4 163.134901 
+L 363.687554 163.134901 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_7"/>
+     <g id="budget-text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="56.9" y="166.93412" transform="rotate(-0 56.9 166.93412)">25</text>
+     </g>
+    </g>
+    <g id="budget-ytick_3">
+     <g id="budget-line2d_8">
+      <path d="M 62.4 112.423267 
+L 363.687554 112.423267 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_9"/>
+     <g id="budget-text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="56.9" y="116.222486" transform="rotate(-0 56.9 116.222486)">50</text>
+     </g>
+    </g>
+    <g id="budget-ytick_4">
+     <g id="budget-line2d_10">
+      <path d="M 62.4 61.711634 
+L 363.687554 61.711634 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_11"/>
+     <g id="budget-text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="56.9" y="65.510852" transform="rotate(-0 56.9 65.510852)">75</text>
+     </g>
+    </g>
+    <g id="budget-ytick_5">
+     <g id="budget-line2d_12">
+      <path d="M 62.4 11 
+L 363.687554 11 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_13"/>
+     <g id="budget-text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="56.9" y="14.799219" transform="rotate(-0 56.9 14.799219)">100</text>
+     </g>
+    </g>
+    <g id="budget-text_9">
+     <text style="font-weight: 600; font-size: 11px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="31.524844" y="113.4375" transform="rotate(-90 31.524844 113.4375)">Fraudes repérées (%)</text>
+    </g>
+   </g>
+   <g id="budget-line2d_14">
+    <path d="M 62.4 213.846535 
+L 363.687554 213.846535 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #4b6269; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="budget-line2d_15">
+    <path d="M 87.507296 92.138614 
+L 171.198283 56.863601 
+L 338.580258 49.804542 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke: #006d70; stroke-width: 2.15; stroke-linecap: square"/>
+    <defs>
+     <path id="budget-me61242dbfa" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #f8f6ef; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#budget-p8eb6e267a5)">
+     <use xlink:href="#budget-me61242dbfa" x="87.507296" y="92.138614" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+     <use xlink:href="#budget-me61242dbfa" x="171.198283" y="56.863601" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+     <use xlink:href="#budget-me61242dbfa" x="338.580258" y="49.804542" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="budget-line2d_16">
+    <path d="M 87.507296 153.864814 
+L 171.198283 146.82604 
+L 338.580258 129.178391 
+" clip-path="url(#budget-p8eb6e267a5)" style="fill: none; stroke-dasharray: 8.6,6.45; stroke-dashoffset: 0; stroke: #ae402b; stroke-width: 2.15"/>
+    <defs>
+     <path id="budget-ma03056e2fd" d="M -3 3 
+L 3 3 
+L 3 -3 
+L -3 -3 
+z
+" style="stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#budget-p8eb6e267a5)">
+     <use xlink:href="#budget-ma03056e2fd" x="87.507296" y="153.864814" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+     <use xlink:href="#budget-ma03056e2fd" x="171.198283" y="146.82604" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+     <use xlink:href="#budget-ma03056e2fd" x="338.580258" y="129.178391" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="budget-text_10">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="87.507296" y="83.058926" transform="rotate(-0 87.507296 83.058926)">60,00</text>
+   </g>
+   <g id="budget-text_11">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="171.198283" y="47.783914" transform="rotate(-0 171.198283 47.783914)">77,39</text>
+   </g>
+   <g id="budget-text_12">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="338.580258" y="40.724855" transform="rotate(-0 338.580258 40.724855)">80,87</text>
+   </g>
+   <g id="budget-text_13">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="87.507296" y="167.463252" transform="rotate(-0 87.507296 167.463252)">29,57</text>
+   </g>
+   <g id="budget-text_14">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="171.198283" y="160.424477" transform="rotate(-0 171.198283 160.424477)">33,04</text>
+   </g>
+   <g id="budget-text_15">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="338.580258" y="142.776829" transform="rotate(-0 338.580258 142.776829)">41,74</text>
+   </g>
+  </g>
+  <g id="budget-axes_2">
+   <g id="budget-patch_3">
+    <path d="M 463.112446 215.875 
+L 764.4 215.875 
+L 764.4 11 
+L 463.112446 11 
+L 463.112446 215.875 
+z
+" style="fill: none"/>
+   </g>
+   <g id="budget-matplotlib.axis_3">
+    <g id="budget-xtick_4">
+     <g id="budget-line2d_17"/>
+     <g id="budget-text_16">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="488.219742" y="228.973438" transform="rotate(-0 488.219742 228.973438)">10</text>
+     </g>
+    </g>
+    <g id="budget-xtick_5">
+     <g id="budget-line2d_18"/>
+     <g id="budget-text_17">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="571.91073" y="228.973438" transform="rotate(-0 571.91073 228.973438)">20</text>
+     </g>
+    </g>
+    <g id="budget-xtick_6">
+     <g id="budget-line2d_19"/>
+     <g id="budget-text_18">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="739.292704" y="228.973438" transform="rotate(-0 739.292704 228.973438)">40</text>
+     </g>
+    </g>
+   </g>
+   <g id="budget-matplotlib.axis_4">
+    <g id="budget-ytick_6">
+     <g id="budget-line2d_20">
+      <path d="M 463.112446 213.846535 
+L 764.4 213.846535 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_21"/>
+     <g id="budget-text_19">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="457.612446" y="217.645753" transform="rotate(-0 457.612446 217.645753)">0</text>
+     </g>
+    </g>
+    <g id="budget-ytick_7">
+     <g id="budget-line2d_22">
+      <path d="M 463.112446 163.134901 
+L 764.4 163.134901 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_23"/>
+     <g id="budget-text_20">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="457.612446" y="166.93412" transform="rotate(-0 457.612446 166.93412)">25</text>
+     </g>
+    </g>
+    <g id="budget-ytick_8">
+     <g id="budget-line2d_24">
+      <path d="M 463.112446 112.423267 
+L 764.4 112.423267 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_25"/>
+     <g id="budget-text_21">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="457.612446" y="116.222486" transform="rotate(-0 457.612446 116.222486)">50</text>
+     </g>
+    </g>
+    <g id="budget-ytick_9">
+     <g id="budget-line2d_26">
+      <path d="M 463.112446 61.711634 
+L 764.4 61.711634 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_27"/>
+     <g id="budget-text_22">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="457.612446" y="65.510852" transform="rotate(-0 457.612446 65.510852)">75</text>
+     </g>
+    </g>
+    <g id="budget-ytick_10">
+     <g id="budget-line2d_28">
+      <path d="M 463.112446 11 
+L 764.4 11 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="budget-line2d_29"/>
+     <g id="budget-text_23">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="457.612446" y="14.799219" transform="rotate(-0 457.612446 14.799219)">100</text>
+     </g>
+    </g>
+    <g id="budget-text_24">
+     <text style="font-weight: 600; font-size: 11px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="432.23729" y="113.4375" transform="rotate(-90 432.23729 113.4375)">Montant frauduleux couvert (%)</text>
+    </g>
+   </g>
+   <g id="budget-line2d_30">
+    <path d="M 463.112446 213.846535 
+L 764.4 213.846535 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #4b6269; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="budget-line2d_31">
+    <path d="M 488.219742 104.836807 
+L 571.91073 63.557537 
+L 739.292704 60.453985 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke: #006d70; stroke-width: 2.15; stroke-linecap: square"/>
+    <g clip-path="url(#budget-pd42b263d2d)">
+     <use xlink:href="#budget-me61242dbfa" x="488.219742" y="104.836807" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+     <use xlink:href="#budget-me61242dbfa" x="571.91073" y="63.557537" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+     <use xlink:href="#budget-me61242dbfa" x="739.292704" y="60.453985" style="fill: #006d70; stroke: #f8f6ef; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="budget-line2d_32">
+    <path d="M 488.219742 66.701658 
+L 571.91073 58.709505 
+L 739.292704 46.214158 
+" clip-path="url(#budget-pd42b263d2d)" style="fill: none; stroke-dasharray: 8.6,6.45; stroke-dashoffset: 0; stroke: #ae402b; stroke-width: 2.15"/>
+    <g clip-path="url(#budget-pd42b263d2d)">
+     <use xlink:href="#budget-ma03056e2fd" x="488.219742" y="66.701658" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+     <use xlink:href="#budget-ma03056e2fd" x="571.91073" y="58.709505" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+     <use xlink:href="#budget-ma03056e2fd" x="739.292704" y="46.214158" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.8; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="budget-text_25">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="488.219742" y="118.435244" transform="rotate(-0 488.219742 118.435244)">53,74</text>
+   </g>
+   <g id="budget-text_26">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="571.91073" y="77.155975" transform="rotate(-0 571.91073 77.155975)">74,09</text>
+   </g>
+   <g id="budget-text_27">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #006d70" x="739.292704" y="74.052423" transform="rotate(-0 739.292704 74.052423)">75,62</text>
+   </g>
+   <g id="budget-text_28">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="488.219742" y="57.621971" transform="rotate(-0 488.219742 57.621971)">72,54</text>
+   </g>
+   <g id="budget-text_29">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="571.91073" y="49.629817" transform="rotate(-0 571.91073 49.629817)">76,48</text>
+   </g>
+   <g id="budget-text_30">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #ae402b" x="739.292704" y="37.134471" transform="rotate(-0 739.292704 37.134471)">82,64</text>
+   </g>
+  </g>
+  <g id="budget-text_31">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="390" y="259.875" transform="rotate(-0 390 259.875)">Contrôles pour 10 000 paiements</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="budget-p8eb6e267a5">
+   <rect x="62.4" y="11" width="301.287554" height="204.875"/>
+  </clipPath>
+  <clipPath id="budget-pd42b263d2d">
+   <rect x="463.112446" y="11" width="301.287554" height="204.875"/>
+  </clipPath>
+ </defs>
+</svg>

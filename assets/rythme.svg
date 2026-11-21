@@ -1,0 +1,392 @@
+<svg role="img" aria-labelledby="rythme-description" xmlns:xlink="http://www.w3.org/1999/xlink" width="780pt" height="275pt" viewBox="0 0 780 275" xmlns="http://www.w3.org/2000/svg" version="1.1"><desc id="rythme-description">Les six tranches de quatre heures comptent successivement 9 577, 7 962, 29 862, 31 182, 32 269 et 33 934 paiements. La fréquence de fraude pour 10 000 paiements atteint respectivement 39,7, 54,0, 21,8, 14,4, 14,9 et 12,4. L’origine temporelle est le premier paiement enregistré.</desc>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.6, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">svg[aria-labelledby="rythme-description"] *{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="rythme-figure_1">
+  <g id="rythme-patch_1">
+   <path d="M 0 275 
+L 780 275 
+L 780 0 
+L 0 0 
+L 0 275 
+z
+" style="fill: none"/>
+  </g>
+  <g id="rythme-axes_1">
+   <g id="rythme-patch_2">
+    <path d="M 58.5 214.5 
+L 368.16 214.5 
+L 368.16 13.75 
+L 58.5 13.75 
+L 58.5 214.5 
+z
+" style="fill: none"/>
+   </g>
+   <g id="rythme-matplotlib.axis_1">
+    <g id="rythme-xtick_1">
+     <g id="rythme-line2d_1"/>
+     <g id="rythme-text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="84.305" y="226.838594" transform="rotate(-0 84.305 226.838594)">0–4</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_2">
+     <g id="rythme-line2d_2"/>
+     <g id="rythme-text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="135.915" y="226.838594" transform="rotate(-0 135.915 226.838594)">4–8</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_3">
+     <g id="rythme-line2d_3"/>
+     <g id="rythme-text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="187.525" y="226.838594" transform="rotate(-0 187.525 226.838594)">8–12</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_4">
+     <g id="rythme-line2d_4"/>
+     <g id="rythme-text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="239.135" y="226.838594" transform="rotate(-0 239.135 226.838594)">12–16</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_5">
+     <g id="rythme-line2d_5"/>
+     <g id="rythme-text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="290.745" y="226.838594" transform="rotate(-0 290.745 226.838594)">16–20</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_6">
+     <g id="rythme-line2d_6"/>
+     <g id="rythme-text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="342.355" y="226.838594" transform="rotate(-0 342.355 226.838594)">20–24</text>
+     </g>
+    </g>
+    <g id="rythme-text_7">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="213.33" y="246.688672" transform="rotate(-0 213.33 246.688672)">Heures depuis le premier paiement</text>
+    </g>
+   </g>
+   <g id="rythme-matplotlib.axis_2">
+    <g id="rythme-ytick_1">
+     <g id="rythme-line2d_7">
+      <path d="M 58.5 214.5 
+L 368.16 214.5 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_8"/>
+     <g id="rythme-text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="53" y="218.299219" transform="rotate(-0 53 218.299219)">0</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_2">
+     <g id="rythme-line2d_9">
+      <path d="M 58.5 164.3125 
+L 368.16 164.3125 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_10"/>
+     <g id="rythme-text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="53" y="168.111719" transform="rotate(-0 53 168.111719)">10</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_3">
+     <g id="rythme-line2d_11">
+      <path d="M 58.5 114.125 
+L 368.16 114.125 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_12"/>
+     <g id="rythme-text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="53" y="117.924219" transform="rotate(-0 53 117.924219)">20</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_4">
+     <g id="rythme-line2d_13">
+      <path d="M 58.5 63.9375 
+L 368.16 63.9375 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_14"/>
+     <g id="rythme-text_11">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="53" y="67.736719" transform="rotate(-0 53 67.736719)">30</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_5">
+     <g id="rythme-line2d_15">
+      <path d="M 58.5 13.75 
+L 368.16 13.75 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_16"/>
+     <g id="rythme-text_12">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="53" y="17.549219" transform="rotate(-0 53 17.549219)">40</text>
+     </g>
+    </g>
+    <g id="rythme-text_13">
+     <text style="font-weight: 600; font-size: 10.5px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="33.091328" y="114.125" transform="rotate(-90 33.091328 114.125)">Paiements (milliers)</text>
+    </g>
+   </g>
+   <g id="rythme-patch_3">
+    <path d="M 66.564063 214.5 
+L 102.045938 214.5 
+L 102.045938 166.435431 
+L 66.564063 166.435431 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-patch_4">
+    <path d="M 118.174062 214.5 
+L 153.655937 214.5 
+L 153.655937 174.540712 
+L 118.174062 174.540712 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-patch_5">
+    <path d="M 169.784063 214.5 
+L 205.265938 214.5 
+L 205.265938 64.630087 
+L 169.784063 64.630087 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-patch_6">
+    <path d="M 221.394062 214.5 
+L 256.875937 214.5 
+L 256.875937 58.005337 
+L 221.394062 58.005337 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-patch_7">
+    <path d="M 273.004063 214.5 
+L 308.485938 214.5 
+L 308.485938 52.549956 
+L 273.004063 52.549956 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-patch_8">
+    <path d="M 324.614062 214.5 
+L 360.095937 214.5 
+L 360.095937 44.193737 
+L 324.614062 44.193737 
+z
+" clip-path="url(#rythme-pb288581896)" style="fill: #296166"/>
+   </g>
+   <g id="rythme-line2d_17">
+    <path d="M 58.5 214.5 
+L 368.16 214.5 
+" clip-path="url(#rythme-pb288581896)" style="fill: none; stroke: #4b6269; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="rythme-text_14">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="84.305" y="160.480525" transform="rotate(-0 84.305 160.480525)">9,6</text>
+   </g>
+   <g id="rythme-text_15">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="135.915" y="168.585806" transform="rotate(-0 135.915 168.585806)">8,0</text>
+   </g>
+   <g id="rythme-text_16">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="187.525" y="58.675181" transform="rotate(-0 187.525 58.675181)">29,9</text>
+   </g>
+   <g id="rythme-text_17">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="239.135" y="52.050431" transform="rotate(-0 239.135 52.050431)">31,2</text>
+   </g>
+   <g id="rythme-text_18">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="290.745" y="46.59505" transform="rotate(-0 290.745 46.59505)">32,3</text>
+   </g>
+   <g id="rythme-text_19">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="342.355" y="38.238831" transform="rotate(-0 342.355 38.238831)">33,9</text>
+   </g>
+  </g>
+  <g id="rythme-axes_2">
+   <g id="rythme-patch_9">
+    <path d="M 460.2 214.5 
+L 769.86 214.5 
+L 769.86 13.75 
+L 460.2 13.75 
+L 460.2 214.5 
+z
+" style="fill: none"/>
+   </g>
+   <g id="rythme-matplotlib.axis_3">
+    <g id="rythme-xtick_7">
+     <g id="rythme-line2d_18"/>
+     <g id="rythme-text_20">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="486.005" y="226.838594" transform="rotate(-0 486.005 226.838594)">0–4</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_8">
+     <g id="rythme-line2d_19"/>
+     <g id="rythme-text_21">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="537.615" y="226.838594" transform="rotate(-0 537.615 226.838594)">4–8</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_9">
+     <g id="rythme-line2d_20"/>
+     <g id="rythme-text_22">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="589.225" y="226.838594" transform="rotate(-0 589.225 226.838594)">8–12</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_10">
+     <g id="rythme-line2d_21"/>
+     <g id="rythme-text_23">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="640.835" y="226.838594" transform="rotate(-0 640.835 226.838594)">12–16</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_11">
+     <g id="rythme-line2d_22"/>
+     <g id="rythme-text_24">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="692.445" y="226.838594" transform="rotate(-0 692.445 226.838594)">16–20</text>
+     </g>
+    </g>
+    <g id="rythme-xtick_12">
+     <g id="rythme-line2d_23"/>
+     <g id="rythme-text_25">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="744.055" y="226.838594" transform="rotate(-0 744.055 226.838594)">20–24</text>
+     </g>
+    </g>
+    <g id="rythme-text_26">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="615.03" y="246.688672" transform="rotate(-0 615.03 246.688672)">Heures depuis le premier paiement</text>
+    </g>
+   </g>
+   <g id="rythme-matplotlib.axis_4">
+    <g id="rythme-ytick_6">
+     <g id="rythme-line2d_24">
+      <path d="M 460.2 214.5 
+L 769.86 214.5 
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_25"/>
+     <g id="rythme-text_27">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="454.7" y="218.299219" transform="rotate(-0 454.7 218.299219)">0</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_7">
+     <g id="rythme-line2d_26">
+      <path d="M 460.2 149.741935 
+L 769.86 149.741935 
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_27"/>
+     <g id="rythme-text_28">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="454.7" y="153.541154" transform="rotate(-0 454.7 153.541154)">20</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_8">
+     <g id="rythme-line2d_28">
+      <path d="M 460.2 84.983871 
+L 769.86 84.983871 
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_29"/>
+     <g id="rythme-text_29">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="454.7" y="88.78309" transform="rotate(-0 454.7 88.78309)">40</text>
+     </g>
+    </g>
+    <g id="rythme-ytick_9">
+     <g id="rythme-line2d_30">
+      <path d="M 460.2 20.225806 
+L 769.86 20.225806 
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="rythme-line2d_31"/>
+     <g id="rythme-text_30">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="454.7" y="24.025025" transform="rotate(-0 454.7 24.025025)">60</text>
+     </g>
+    </g>
+    <g id="rythme-text_31">
+     <text style="font-weight: 600; font-size: 10.5px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="434.791328" y="114.125" transform="rotate(-90 434.791328 114.125)">Fraudes pour 10 000 paiements</text>
+    </g>
+   </g>
+   <g id="rythme-patch_10">
+    <path d="M 468.264062 214.5 
+L 503.745937 214.5 
+L 503.745937 86.025194 
+L 468.264062 86.025194 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-patch_11">
+    <path d="M 519.874063 214.5 
+L 555.355937 214.5 
+L 555.355937 39.632079 
+L 519.874063 39.632079 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-patch_12">
+    <path d="M 571.484062 214.5 
+L 606.965937 214.5 
+L 606.965937 144.021227 
+L 571.484062 144.021227 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-patch_13">
+    <path d="M 623.094062 214.5 
+L 658.575938 214.5 
+L 658.575938 167.772514 
+L 623.094062 167.772514 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-patch_14">
+    <path d="M 674.704062 214.5 
+L 710.185937 214.5 
+L 710.185937 166.336329 
+L 674.704062 166.336329 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-patch_15">
+    <path d="M 726.314062 214.5 
+L 761.795938 214.5 
+L 761.795938 174.424579 
+L 726.314062 174.424579 
+z
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: #526b80"/>
+   </g>
+   <g id="rythme-line2d_32">
+    <path d="M 460.2 214.5 
+L 769.86 214.5 
+" clip-path="url(#rythme-pefa9516ddd)" style="fill: none; stroke: #4b6269; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="rythme-text_32">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="486.005" y="80.070287" transform="rotate(-0 486.005 80.070287)">39,7</text>
+   </g>
+   <g id="rythme-text_33">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="537.615" y="33.677173" transform="rotate(-0 537.615 33.677173)">54,0</text>
+   </g>
+   <g id="rythme-text_34">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="589.225" y="138.066321" transform="rotate(-0 589.225 138.066321)">21,8</text>
+   </g>
+   <g id="rythme-text_35">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="640.835" y="161.817607" transform="rotate(-0 640.835 161.817607)">14,4</text>
+   </g>
+   <g id="rythme-text_36">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="692.445" y="160.381422" transform="rotate(-0 692.445 160.381422)">14,9</text>
+   </g>
+   <g id="rythme-text_37">
+    <text style="font-weight: 600; font-size: 9.4px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="744.055" y="168.469672" transform="rotate(-0 744.055 168.469672)">12,4</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="rythme-pb288581896">
+   <rect x="58.5" y="13.75" width="309.66" height="200.75"/>
+  </clipPath>
+  <clipPath id="rythme-pefa9516ddd">
+   <rect x="460.2" y="13.75" width="309.66" height="200.75"/>
+  </clipPath>
+ </defs>
+</svg>

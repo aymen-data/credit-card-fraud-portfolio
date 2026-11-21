@@ -1,0 +1,255 @@
+<svg role="img" aria-labelledby="lots-description" xmlns:xlink="http://www.w3.org/1999/xlink" width="600pt" height="285pt" viewBox="0 0 600 285" xmlns="http://www.w3.org/2000/svg" version="1.1"><desc id="lots-description">Au budget de 20 contrôles pour 10 000 paiements, l’écart cumulé entre le classement monétaire et le risque seul atteint +476,72 unités après le premier lot, puis diminue jusqu’à +391,97 à l’issue des dix lots.</desc>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.6, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">svg[aria-labelledby="lots-description"] *{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="lots-figure_1">
+  <g id="lots-patch_1">
+   <path d="M 0 285 
+L 600 285 
+L 600 0 
+L 0 0 
+L 0 285 
+z
+" style="fill: none"/>
+  </g>
+  <g id="lots-axes_1">
+   <g id="lots-patch_2">
+    <path d="M 84 230.85 
+L 570 230.85 
+L 570 17.1 
+L 84 17.1 
+L 84 230.85 
+z
+" style="fill: none"/>
+   </g>
+   <g id="lots-matplotlib.axis_1">
+    <g id="lots-xtick_1">
+     <g id="lots-line2d_1"/>
+     <g id="lots-text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="88.727626" y="243.948438" transform="rotate(-0 88.727626 243.948438)">0</text>
+     </g>
+    </g>
+    <g id="lots-xtick_2">
+     <g id="lots-line2d_2"/>
+     <g id="lots-text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="136.003891" y="243.948438" transform="rotate(-0 136.003891 243.948438)">1</text>
+     </g>
+    </g>
+    <g id="lots-xtick_3">
+     <g id="lots-line2d_3"/>
+     <g id="lots-text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="183.280156" y="243.948438" transform="rotate(-0 183.280156 243.948438)">2</text>
+     </g>
+    </g>
+    <g id="lots-xtick_4">
+     <g id="lots-line2d_4"/>
+     <g id="lots-text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="230.55642" y="243.948438" transform="rotate(-0 230.55642 243.948438)">3</text>
+     </g>
+    </g>
+    <g id="lots-xtick_5">
+     <g id="lots-line2d_5"/>
+     <g id="lots-text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="277.832685" y="243.948438" transform="rotate(-0 277.832685 243.948438)">4</text>
+     </g>
+    </g>
+    <g id="lots-xtick_6">
+     <g id="lots-line2d_6"/>
+     <g id="lots-text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="325.108949" y="243.948438" transform="rotate(-0 325.108949 243.948438)">5</text>
+     </g>
+    </g>
+    <g id="lots-xtick_7">
+     <g id="lots-line2d_7"/>
+     <g id="lots-text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="372.385214" y="243.948438" transform="rotate(-0 372.385214 243.948438)">6</text>
+     </g>
+    </g>
+    <g id="lots-xtick_8">
+     <g id="lots-line2d_8"/>
+     <g id="lots-text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="419.661479" y="243.948438" transform="rotate(-0 419.661479 243.948438)">7</text>
+     </g>
+    </g>
+    <g id="lots-xtick_9">
+     <g id="lots-line2d_9"/>
+     <g id="lots-text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="466.937743" y="243.948438" transform="rotate(-0 466.937743 243.948438)">8</text>
+     </g>
+    </g>
+    <g id="lots-xtick_10">
+     <g id="lots-line2d_10"/>
+     <g id="lots-text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="514.214008" y="243.948438" transform="rotate(-0 514.214008 243.948438)">9</text>
+     </g>
+    </g>
+    <g id="lots-xtick_11">
+     <g id="lots-line2d_11"/>
+     <g id="lots-text_11">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #4b6269" x="561.490272" y="243.948438" transform="rotate(-0 561.490272 243.948438)">10</text>
+     </g>
+    </g>
+    <g id="lots-text_12">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="327" y="263.386406" transform="rotate(-0 327 263.386406)">Dernier lot inclus</text>
+    </g>
+   </g>
+   <g id="lots-matplotlib.axis_2">
+    <g id="lots-ytick_1">
+     <g id="lots-line2d_12">
+      <path d="M 84 225.063198 
+L 570 225.063198 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_13"/>
+     <g id="lots-text_13">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="228.862417" transform="rotate(-0 78.5 228.862417)">0</text>
+     </g>
+    </g>
+    <g id="lots-ytick_2">
+     <g id="lots-line2d_14">
+      <path d="M 84 188.895685 
+L 570 188.895685 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_15"/>
+     <g id="lots-text_14">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="192.694904" transform="rotate(-0 78.5 192.694904)">100</text>
+     </g>
+    </g>
+    <g id="lots-ytick_3">
+     <g id="lots-line2d_16">
+      <path d="M 84 152.728173 
+L 570 152.728173 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_17"/>
+     <g id="lots-text_15">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="156.527391" transform="rotate(-0 78.5 156.527391)">200</text>
+     </g>
+    </g>
+    <g id="lots-ytick_4">
+     <g id="lots-line2d_18">
+      <path d="M 84 116.56066 
+L 570 116.56066 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_19"/>
+     <g id="lots-text_16">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="120.359879" transform="rotate(-0 78.5 120.359879)">300</text>
+     </g>
+    </g>
+    <g id="lots-ytick_5">
+     <g id="lots-line2d_20">
+      <path d="M 84 80.393147 
+L 570 80.393147 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_21"/>
+     <g id="lots-text_17">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="84.192366" transform="rotate(-0 78.5 84.192366)">400</text>
+     </g>
+    </g>
+    <g id="lots-ytick_6">
+     <g id="lots-line2d_22">
+      <path d="M 84 44.225635 
+L 570 44.225635 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ccd4d2; stroke-opacity: 0.85; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="lots-line2d_23"/>
+     <g id="lots-text_18">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #4b6269" x="78.5" y="48.024853" transform="rotate(-0 78.5 48.024853)">500</text>
+     </g>
+    </g>
+    <g id="lots-text_19">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #122a37" x="48.124844" y="123.975" transform="rotate(-90 48.124844 123.975)">Écart cumulé (unités monétaires)</text>
+    </g>
+   </g>
+   <g id="lots-line2d_24">
+    <path d="M 84 225.063198 
+L 570 225.063198 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #4b6269; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="lots-line2d_25">
+    <path d="M 88.727626 225.063198 
+L 136.003891 52.645431 
+L 183.280156 53.007107 
+L 230.55642 57.014467 
+L 277.832685 62.826586 
+L 325.108949 69.730964 
+L 372.385214 76.50514 
+L 419.661479 80.631853 
+L 466.937743 83.022525 
+L 514.214008 83.297398 
+L 561.490272 83.297398 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ae402b; stroke-width: 2.5; stroke-linecap: square"/>
+    <defs>
+     <path id="lots-m422e9e91c1" d="M -2.4 2.4 
+L 2.4 2.4 
+L 2.4 -2.4 
+L -2.4 -2.4 
+z
+" style="stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#lots-p8d66b5da64)">
+     <use xlink:href="#lots-m422e9e91c1" x="88.727626" y="225.063198" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="136.003891" y="52.645431" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="183.280156" y="53.007107" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="230.55642" y="57.014467" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="277.832685" y="62.826586" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="325.108949" y="69.730964" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="372.385214" y="76.50514" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="419.661479" y="80.631853" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="466.937743" y="83.022525" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="514.214008" y="83.297398" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+     <use xlink:href="#lots-m422e9e91c1" x="561.490272" y="83.297398" style="fill: #ae402b; stroke: #f8f6ef; stroke-width: 0.7; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="lots-line2d_26">
+    <path d="M 136.003891 52.645431 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ae402b; stroke-width: 1.5; stroke-linecap: square"/>
+    <defs>
+     <path id="lots-me3a4b796d0" d="M -3.5 3.5 
+L 3.5 3.5 
+L 3.5 -3.5 
+L -3.5 -3.5 
+z
+" style="stroke: #f8f6ef; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#lots-p8d66b5da64)">
+     <use xlink:href="#lots-me3a4b796d0" x="136.003891" y="52.645431" style="fill: #ae402b; stroke: #f8f6ef; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="lots-line2d_27">
+    <path d="M 561.490272 83.297398 
+" clip-path="url(#lots-p8d66b5da64)" style="fill: none; stroke: #ae402b; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#lots-p8d66b5da64)">
+     <use xlink:href="#lots-me3a4b796d0" x="561.490272" y="83.297398" style="fill: #ae402b; stroke: #f8f6ef; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="lots-text_20">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #ae402b" x="136.003891" y="40.941838" transform="rotate(-0 136.003891 40.941838)">+476,72</text>
+   </g>
+   <g id="lots-text_21">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #ae402b" x="561.490272" y="103.175367" transform="rotate(-0 561.490272 103.175367)">+391,97</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="lots-p8d66b5da64">
+   <rect x="84" y="17.1" width="486" height="213.75"/>
+  </clipPath>
+ </defs>
+</svg>
