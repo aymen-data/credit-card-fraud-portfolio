@@ -17,7 +17,7 @@ Ce projet compare deux stratégies qui utilisent le même modèle et le même bu
 | [Application interactive](https://aymen-data.github.io/credit-card-fraud-portfolio/) | Choix du budget de 0 à 100 contrôles pour 10 000 paiements, exploration par lot, inspection des alertes |
 | [Notebook Python exécuté](notebooks/Detection_fraude_carte_bancaire.ipynb) | Préparation, modèles, calibration, test chronologique et analyse des deux sélections |
 | [Notebook en HTML](https://aymen-data.github.io/credit-card-fraud-portfolio/notebook.html) | Lecture dans un navigateur après téléchargement |
-| [Mémoire PDF](memoire/Memoire_Aymen_Hammami.pdf) et [source LaTeX](memoire/main.tex) | 18 pages, protocole, résultats, discussion et références |
+| [Mémoire PDF](memoire/Memoire_Aymen_Hammami.pdf) | 18 pages, protocole, résultats, discussion et références |
 | [Présentation HTML](https://aymen-data.github.io/credit-card-fraud-portfolio/presentation.html) | 11 diapositives, trois graphiques, notes de soutenance et simulateur intégré hors ligne |
 
 Télécharger le dépôt avec **Code → Download ZIP**, puis ouvrir `docs/presentation.html` ou `docs/index.html` pour les utiliser hors ligne. La présentation se pilote avec les flèches du clavier et propose un mode plein écran.
@@ -72,13 +72,6 @@ python -m jupyterlab
 Ouvrir `notebooks/Detection_fraude_carte_bancaire.ipynb` et exécuter toutes les cellules. Le notebook télécharge le CSV depuis le miroir du tutoriel officiel TensorFlow et vérifie son empreinte SHA-256. Un téléchargement initial requiert une connexion. On peut aussi renseigner `CHEMIN_CSV` avec un fichier local. Les sorties présentes dans le notebook restent lisibles sans relancer les modèles.
 
 L’application et le diaporama sont autonomes. Ils utilisent les probabilités et les classements archivés de l’expérience. Modifier le budget recalcule les sélections, et le modèle conserve ses paramètres.
-
-Pour compiler le mémoire avec une distribution TeX comprenant XeLaTeX et les packages utilisés dans le fichier, lancer deux fois depuis le répertoire `memoire/`.
-
-```bash
-xelatex -interaction=nonstopmode main.tex
-xelatex -interaction=nonstopmode main.tex
-```
 
 ## Portée et perspectives
 
